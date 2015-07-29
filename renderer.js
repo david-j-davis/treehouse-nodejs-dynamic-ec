@@ -18,13 +18,11 @@ function view(templateName, values, reponse) {
   //Write out the contents to the response
   reponse.write(fileContents);
 }
-//==========================================//
-//             CONTENT-TYPE                  //
-//==========================================//
-// function contentType(values, request, response) {
-//     var fileContents = fs.readFileSync(__dirname + values);
-//     response.write(fileContents);
-// }
 
-// module.exports.contentType = contentType;
+function contentType(values, request, response) {
+    var fileContents = fs.readFileSync(__dirname + values);
+    response.write(fileContents);
+}
+
+module.exports.contentType = contentType;
 module.exports.view = view;

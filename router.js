@@ -70,33 +70,31 @@ function user(request, response) {
       
   }
 }
-//===========================================//
-//   HTTP:'Content-Type' request handler    //
-//=========================================//
-// function styleAndscript(request, response) {
-//     if (request.url.indexOf('.css') != -1) {
-//         response.writeHead(200, {'Content-Type': 'text/css'});
-//         renderer.contentType('/views' + request.url, request, response);
-//         response.end();
-//     }
-//     if (request.url.indexOf('.js') != -1) {
-//         response.writeHead(200, {'Content-Type': 'text/javascript'});
-//         renderer.contentType('/' + request.url, request, response);
-//         response.end();
-//     }
-//     if (request.url.indexOf('.jpg') != -1) {
-//         response.writeHead(200, {'Content-Type': 'image/jpeg'});
-//         renderer.contentType('/views' + request.url, request, response);
-//         response.end();
-//     }
-//     if (request.url.indexOf('.png') != -1) {
-//         response.writeHead(200, {'Content-Type': 'image/png'});
-//         renderer.contentType('/views' + request.url, request, response);
-//         response.end();
-//     }
-// }
 
-// module.exports.styleAndscript = styleAndscript;
+function styleAndscript(request, response) {
+    if (request.url.indexOf('.css') != -1) {
+        response.writeHead(200, {'Content-Type': 'text/css'});
+        renderer.contentType('/views' + request.url, request, response);
+        response.end();
+    }
+    if (request.url.indexOf('.js') != -1) {
+        response.writeHead(200, {'Content-Type': 'text/javascript'});
+        renderer.contentType('/' + request.url, request, response);
+        response.end();
+    }
+    if (request.url.indexOf('.jpg') != -1) {
+        response.writeHead(200, {'Content-Type': 'image/jpeg'});
+        renderer.contentType('/views' + request.url, request, response);
+        response.end();
+    }
+    if (request.url.indexOf('.png') != -1) {
+        response.writeHead(200, {'Content-Type': 'image/png'});
+        renderer.contentType('/views' + request.url, request, response);
+        response.end();
+    }
+}
+
+module.exports.styleAndscript = styleAndscript;
 module.exports.home = home;
 module.exports.user = user;
 
